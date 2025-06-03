@@ -1,0 +1,32 @@
+spring:
+  docker:
+    compose:
+      enabled: true   # ???? Docker Compose ??
+      file: compose.yaml
+  application:
+    name: demo-test
+  datasource:
+    url: jdbc:postgresql://localhost:55435/configdb
+    username: postgres
+    password: abc123
+  redis:
+    host: redis
+    port: 6379
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: client-id
+            client-secret: your-client-secret
+            scope: profile,email
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://oauth2.googleapis.com/token
+okta:
+  oauth2:
+    issuer: https://dev-123456.okta.com/oauth2/default
+    client-id: client-id
+
+

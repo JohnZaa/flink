@@ -1,0 +1,18 @@
+services:
+#  db:
+#    image: postgres:16
+#    container_name: postgres-db
+#    restart: always
+#    environment:
+#      POSTGRES_DB: mydatabase
+#      POSTGRES_USER: myuser
+#      POSTGRES_PASSWORD: mypassword
+#    ports:
+#      - "5432:5432"
+
+#  redis:
+#    image: redis:7
+#    container_name: redis-cache
+#    restart: always
+#    ports:
+#      - "6379:6379"
