@@ -1,4 +1,4 @@
-package org.apache.flink.model;
+package org.apache.flink.graph.model;
 
 /**
  * JobGraph 代表 JobManager 所接受的底层 Flink 数据流程序.

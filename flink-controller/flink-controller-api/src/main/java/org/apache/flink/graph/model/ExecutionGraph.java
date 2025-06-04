@@ -1,4 +1,4 @@
 package org.apache.flink.graph.model;
 
-public class ExceutionGraph {
+public class ExecutionGraph {
 }

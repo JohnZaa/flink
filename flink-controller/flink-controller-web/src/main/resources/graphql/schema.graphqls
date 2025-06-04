@@ -1,9 +1,39 @@
 type Query {
-  bookById(id: ID!): Book
+    bookById(id: ID!): Book
+    getUserById(id: ID!): User
+    allUsers: [User!]!
+    getAllTodos: [Todo!]!
+}
+
+type Mutation {
+    createUser(input: UserInput!): User
+    createTodo(input: TodoInput!): Todo
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+}
+
+input UserInput {
+    name: String!
+    email: String!
 }
 
 type Book {
   id: ID!
   title: String
   author: String
+}
+
+type Todo {
+    id: ID!
+    title: String!
+    completed: Boolean!
+}
+
+input TodoInput {
+    title: String!
+    completed: Boolean!
 }

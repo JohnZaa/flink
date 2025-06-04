@@ -106,7 +106,8 @@ under the License.
 		<module>tools/ci/flink-ci-tools</module>
 		<module>flink-datastream</module>
 		<module>flink-datastream-api</module>
-	</modules>
+        <module>flink-controller</module>
+    </modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -218,6 +219,7 @@ under the License.
 		<test.randomization.seed/>
 		<test.unit.pattern>**/*Test.*</test.unit.pattern>
 		<snappy.java.version>1.1.10.7</snappy.java.version>
+		<maven.javadoc.skip>true</maven.javadoc.skip>
 	</properties>
 
 	<dependencies>
@@ -295,7 +297,7 @@ under the License.
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
 			<scope>test</scope>
 		</dependency>
 
@@ -520,7 +522,7 @@ under the License.
 
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
-				<artifactId>log4j-slf4j-impl</artifactId>
+				<artifactId>log4j-slf4j2-impl</artifactId>
 				<version>${log4j.version}</version>
 			</dependency>
 
@@ -2242,7 +2244,7 @@ under the License.
 							<dependency>log4j:log4j</dependency>
 							<dependency>org.slf4j:slf4j-log4j12</dependency>
 							<!-- log4j2 -->
-							<dependency>org.apache.logging.log4j:log4j-slf4j-impl</dependency>
+							<dependency>org.apache.logging.log4j:log4j-slf4j2-impl</dependency>
 							<dependency>org.apache.logging.log4j:log4j-api</dependency>
 							<dependency>org.apache.logging.log4j:log4j-core</dependency>
 							<dependency>org.apache.logging.log4j:log4j-1.2-api</dependency>

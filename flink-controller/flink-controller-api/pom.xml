@@ -17,4 +17,17 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+<!--	<dependencies>-->
+<!--		&lt;!&ndash; 只放一些共享依赖，如 Lombok、JPA 注解、Validation &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>jakarta.validation</groupId>-->
+<!--			<artifactId>jakarta.validation-api</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.projectlombok</groupId>-->
+<!--			<artifactId>lombok</artifactId>-->
+<!--			<version>1.18.30</version> &lt;!&ndash; ✅ 推荐写明版本 &ndash;&gt;-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
+<!--	</dependencies>-->
 </project>
