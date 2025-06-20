@@ -4,7 +4,7 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.apache.flink</groupId>
+		<groupId>org.unit.flink</groupId>
 		<artifactId>flink-controller</artifactId>
 		<version>2.1-SNAPSHOT</version>
 	</parent>
@@ -23,14 +23,14 @@
 						Module Dependencies
 			=================================================== -->
 		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-controller-service</artifactId>
+			<groupId>org.unit.flink</groupId>
+			<artifactId>flink-controller-dsl</artifactId>
 			<version>2.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-controller-api</artifactId>
+			<groupId>org.unit.flink</groupId>
+			<artifactId>flink-controller-core</artifactId>
 			<version>2.1-SNAPSHOT</version>
 		</dependency>
 
@@ -41,6 +41,11 @@
 <!--			<groupId>org.springframework.boot</groupId>-->
 <!--			<artifactId>spring-boot-starter-web</artifactId>-->
 <!--		</dependency>-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -123,96 +128,73 @@
 
 
 
+
+		<!-- MySQL Driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+		</dependency>
+
 		<!-- ===================================================
-						Flink Dependencies
+				Service Dependencies
 			=================================================== -->
 
 		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-runtime</artifactId>
-			<version>${project.version}</version>
-<!--			<exclusions>-->
-<!--				<exclusion>-->
-<!--					<groupId>org.slf4j</groupId>-->
-<!--					<artifactId>slf4j-log4j12</artifactId>-->
-<!--				</exclusion>-->
-<!--				<exclusion>-->
-<!--					<groupId>org.slf4j</groupId>-->
-<!--					<artifactId>slf4j-reload4j</artifactId>-->
-<!--				</exclusion>-->
-<!--				<exclusion>-->
-<!--					<groupId>org.slf4j</groupId>-->
-<!--					<artifactId>slf4j-simple</artifactId>-->
-<!--				</exclusion>-->
-<!--			</exclusions>-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
+
 		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-clients</artifactId>
-			<version>${project.version}</version>
-<!--			<exclusions>-->
-<!--				<exclusion>-->
-<!--					<groupId>org.slf4j</groupId>-->
-<!--					<artifactId>slf4j-log4j12</artifactId>-->
-<!--				</exclusion>-->
-<!--				<exclusion>-->
-<!--					<groupId>org.slf4j</groupId>-->
-<!--					<artifactId>slf4j-reload4j</artifactId>-->
-<!--				</exclusion>-->
-<!--				<exclusion>-->
-<!--					<groupId>org.slf4j</groupId>-->
-<!--					<artifactId>slf4j-simple</artifactId>-->
-<!--				</exclusion>-->
-<!--			</exclusions>-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>org.apache.logging.log4j</groupId>-->
+		<!--			<artifactId>log4j-slf4j2-impl</artifactId>-->
+		<!--		</dependency>-->
+
+		<!-- ===================================================
+						springBoot Dependencies
+			=================================================== -->
+		<!-- Spring Boot Data JPA -->
+		<!--		<dependency>-->
+		<!--			<groupId>org.springframework.boot</groupId>-->
+		<!--			<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+		<!--		</dependency>-->
+
+
+		<!-- 使用 R2DBC 而不是 JPA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
 		</dependency>
 
+		<!-- R2DBC 驱动，例如 PostgreSQL -->
+		<!-- https://mvnrepository.com/artifact/io.r2dbc/r2dbc-postgresql -->
+		<dependency>
+			<groupId>io.r2dbc</groupId>
+			<artifactId>r2dbc-postgresql</artifactId>
+			<scope>runtime</scope>
+			<version>0.8.13.RELEASE</version>
+		</dependency>
 
-		<!-- ===================================================
-							Dependencies for the Web Server
-				=================================================== -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>org.apache.flink</groupId>-->
-<!--			<artifactId>flink-shaded-netty</artifactId>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>org.apache.flink</groupId>-->
-<!--			<artifactId>flink-shaded-guava</artifactId>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>org.apache.flink</groupId>-->
-<!--			<artifactId>flink-shaded-jackson</artifactId>-->
-<!--		</dependency>-->
-
-		<!-- ===================================================
-								Testing
-			=================================================== -->
-
-<!--		<dependency>-->
-<!--			<groupId>org.apache.flink</groupId>-->
-<!--			<artifactId>flink-test-utils-junit</artifactId>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>org.apache.flink</groupId>-->
-<!--			<artifactId>flink-test-utils</artifactId>-->
-<!--			<version>${project.version}</version>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>org.apache.flink</groupId>-->
-<!--			<artifactId>flink-shaded-jackson-module-jsonSchema</artifactId>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>commons-io</groupId>-->
-<!--			<artifactId>commons-io</artifactId>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
 
 
 		<dependency>
