@@ -8,15 +8,15 @@
 <!--		<artifactId>flink-parent</artifactId>-->
 <!--		<version>2.1-SNAPSHOT</version>-->
 <!--	</parent>-->
-	<groupId>org.apache.flink</groupId>
+	<groupId>org.unit.flink</groupId>
 	<artifactId>flink-controller</artifactId>
 	<name>FLink : Controller</name>
 	<version>2.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>flink-controller-web</module>
-		<module>flink-controller-service</module>
-		<module>flink-controller-api</module>
+		<module>flink-controller-dsl</module>
+		<module>flink-controller-core</module>
 	</modules>
 
 
@@ -26,6 +26,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.javadoc.skip>true</maven.javadoc.skip>
 		<spotless.check.skip>true</spotless.check.skip>
+		<flink.version>2.1-SNAPSHOT</flink.version>
 
 	</properties>
 
